@@ -8,7 +8,7 @@ public class Prescription {
     private ArrayList <PrescriptionMedication> Medications;
 
     public Prescription(int code, ArrayList<PrescriptionMedication> Medications) {
-        this.code = code;
+        setCode(code);
         this.Medications = Medications;
     }
 
@@ -17,7 +17,10 @@ public class Prescription {
     }
 
     public void setCode(int code) {
-        this.code = code;
+        if (String.valueOf(code).length() == 8)
+            this.code = code;
+        else
+            System.out.println("Error");
     }
 
     public ArrayList<PrescriptionMedication> getMedications() {
